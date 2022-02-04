@@ -16,16 +16,24 @@ Bonus
 const root = new Vue({
     el: '#root',
     data: {
-        emails: ['pippo', 'pippo', 'pippo', 'pippo', 'pippo', 'pippo', 'pippo', 'pippo', 'pippo', 'pippo', ],
+        email: '',
+        emails: [],
+        totalEmails: 10,
     },
     methods: {
-        getRandomEmail() {
-
+        getRandomEmail(key) {
+            axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then(res => {
+                this[key] = res.data.response;
+                console.log(res.data.response);
+            });
         },
+        getRandomEmails(){
+            for (let i = 0; i < this.totalEmails; i++) {
+                this.getRandomEmail(this.email);
+            }
+        }
     },
     created() {
-        axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then(res => {
-            console.log(res.data.response);
-            });
+        this.getRandomEmails();
     },
 });
