@@ -20,13 +20,12 @@ const root = new Vue({
         totalEmails: 10,
     },
     methods: {
-        getRandomEmail(key) {
+        getRandomEmail() {
             axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then(res => {
-                this[key] = res.data.response;
-                console.log(res.data.response);
+                this.emails.push(res.data.response);
             });
         },
-        getRandomEmails(){
+        getRandomEmails() {
             for (let i = 0; i < this.totalEmails; i++) {
                 this.getRandomEmail(this.emails);
             };
@@ -34,5 +33,6 @@ const root = new Vue({
     },
     created() {
         this.getRandomEmails();
+        console.log(this.emails);
     },
 });
