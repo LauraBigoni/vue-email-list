@@ -16,7 +16,6 @@ Bonus
 const root = new Vue({
     el: '#root',
     data: {
-        email: '',
         emails: [],
         totalEmails: 10,
     },
@@ -29,9 +28,9 @@ const root = new Vue({
         },
         getRandomEmails(){
             for (let i = 0; i < this.totalEmails; i++) {
-                this.getRandomEmail(this.email);
-            }
-        }
+                this.getRandomEmail(this.emails);
+            };
+        },
     },
     created() {
         this.getRandomEmails();
