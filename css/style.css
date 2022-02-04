@@ -1,1 +1,7 @@
 /* Generics */
+body {
+    background-color: rgb(236, 218, 201);
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    line-height: 40px;
+}
