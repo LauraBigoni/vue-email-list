@@ -30,9 +30,9 @@ const root = new Vue({
             for (let i = 0; i < num; i++) {
                 if (this.emails.indexOf(this.emails[i]) === -1) {
                     this.getRandomEmail();
-                    };
                 };
-            },
+            };
+        },
     },
     created() {
         this.getRandomEmails(this.totalEmails);
