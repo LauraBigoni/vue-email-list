@@ -25,7 +25,6 @@ const root = new Vue({
                 this.emails.push(res.data.response);
             });
         },
-
         getRandomEmails(num) {
             for (let i = 0; i < num; i++) {
                 if (this.emails.indexOf(this.emails[i]) === -1) {
@@ -33,9 +32,14 @@ const root = new Vue({
                 };
             };
         },
+        showEmails() {
+            this.getRandomEmails(this.totalEmails);
+        },
+        deleteEmails() {
+            setTimeout(() => {this.emails = [];}, 1000);
+        }
     },
     created() {
-        this.getRandomEmails(this.totalEmails);
         console.log(this.emails);
     },
 });

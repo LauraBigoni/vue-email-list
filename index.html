@@ -28,6 +28,7 @@
             <div class="row text-center">
                 <div class="col">
                     <h1>Email list:</h1>
+                    <button type="button" class="btn btn-warning mb-4" @click="showEmails">Genera le email</button><button type="button" class="btn btn-danger ms-4 mb-4" @click="deleteEmails">Elimina le email</button>
                     <ul v-show="emails.length === totalEmails" class="list-unstyled">
                         <li v-for="email in emails">{{ email }}</li>
                     </ul>
