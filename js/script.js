@@ -25,11 +25,14 @@ const root = new Vue({
                 this.emails.push(res.data.response);
             });
         },
+
         getRandomEmails(num) {
             for (let i = 0; i < num; i++) {
-                this.getRandomEmail();
-            };
-        },
+                if (this.emails.indexOf(this.emails[i]) === -1) {
+                    this.getRandomEmail();
+                    };
+                };
+            },
     },
     created() {
         this.getRandomEmails(this.totalEmails);
