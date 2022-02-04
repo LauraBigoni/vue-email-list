@@ -25,7 +25,7 @@
             <div class="row text-center">
                 <div class="col">
                     <h1>Email list:</h1>
-                    <ul class="list-unstyled">
+                    <ul v-show="emails.length === totalEmails" class="list-unstyled">
                         <li v-for="email in emails">{{ email }}</li>
                     </ul>
                 </div>
